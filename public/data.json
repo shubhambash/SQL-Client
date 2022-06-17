@@ -1,0 +1,376 @@
+[
+    {
+        "filename" : "products",
+        "historyQueries" : [
+            
+            {
+                "queryName" : "Over priced products",
+                "queryDescription" : "prices over 1000 and less than 3000",
+                "daysAgo" : "2",
+                "addedDate" : "01/02/22",
+                "author" : "Shubham Kumar",
+                "query" : "SELECT productId, productName, unitPrice FROM products WHERE unitPrice BETWEEN 1000 AND 3000"
+            },
+
+            {
+                "queryName" : "View Chai data",
+                "queryDescription" : "select all columns of product chai",
+                "daysAgo" : "9",
+                "addedDate" : "12/04/22",
+                "author" : "Mukesh Rao",
+                "query" : "SELECT * FROM products WHERE productName = 'chai'"
+            },
+            {
+                "queryName" : "Null discontinues",
+                "queryDescription" : "all null/ zero discontinues . . ",
+                "daysAgo" : "3",
+                "addedDate" : "15/04/22",
+                "author" : "Kripesh Pradhan",
+                "query" : "SELECT productName, supplierid FROM products WHERE discontinued = 0"
+            }
+
+        ],
+        "sharedQueries" : [
+            {
+                "queryName" : "Over priced products",
+                "queryDescription" : "prices over 1000 and less than 3000",
+                "addedDate" : "01/02/22",
+                "daysAgo" : "1",
+                "author" : "Shubham Kumar",
+                "query" : "SELECT productId, productName, unitPrice FROM products WHERE unitPrice BETWEEN 1000 AND 3000"
+            },
+
+            {
+                "queryName" : "Units in order sorted",
+                "queryDescription" : "shows data  in sorted units order",
+                "addedDate" : "9/03/22",
+                "daysAgo" : "12",
+                "author" : "Arun Harwani",
+                "query" : "SELECT * FROM products WHERE unitsInOrder SORTED"
+            }
+
+
+        ],
+        "savedQueries" : [
+            {
+                "queryName" : "View Chai data",
+                "queryDescription" : "select all columns of product chai",
+                "addedDate" : "12/04/22",
+                "daysAgo" : "17",
+                "author" : "Mukesh Rao",
+                "query" : "SELECT * FROM products WHERE productName = 'chai'"
+            }
+            ,
+            {
+                "queryName" : "Units in order sorted",
+                "queryDescription" : "shows data  in sorted units order",
+                "addedDate" : "9/03/22",
+                "daysAgo" : "5",
+                "author" : "Arun Harwani",
+                "query" : "SELECT * FROM products WHERE unitsInOrder SORTED"
+            },
+            {
+                "queryName" : "Null discontinues",
+                "queryDescription" : "all null/ zero discontinues . . ",
+                "addedDate" : "15/04/22",
+                "daysAgo" : "9",
+                "author" : "Kripesh Pradhan",
+                "query" : "SELECT productName, supplierid FROM products WHERE discontinued = 0"
+            },
+            {
+                "queryName" : "Over priced products",
+                "queryDescription" : "prices over 1000 and less than 3000",
+                "addedDate" : "01/02/22",
+                "daysAgo" : "20",
+                "author" : "Shubham Kumar",
+                "query" : "SELECT productId, productName, unitPrice FROM products WHERE unitPrice BETWEEN 1000 AND 3000"
+            }
+        
+
+        ],
+        "columns" : ["id","productId", "productName", "supplierId", "categoryId","unitPrice", "unitsInStock","unitsInOrder","reorderLevel","discontinued"],
+        "rows" : [
+            {
+                "id" : "1",
+                "productId" : "1",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+            },
+            {
+                "id" : "2",
+                "productId" : "2",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+
+            },
+            {
+                "id" : "3",
+                "productId" : "3",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+
+            },
+            {
+                "id" : "4",
+                "productId" : "4",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+
+            },
+            {
+                "id" : "5",
+                "productId" : "5",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+
+            },
+            {
+                "id" : "6",
+                "productId" : "6",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+
+            },
+            {
+                "id" : "7",
+                "productId" : "1",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+
+            },
+            {
+                "id" : "8",
+                "productId" : "1",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+
+            },
+            {
+                "id" : "9",
+                "productId" : "1",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+
+            },
+            {
+                "id" : "10",
+                "productId" : "1",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+
+            },
+            {
+                "id" : "11",
+                "productId" : "1",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+
+            },
+            {
+                "id" : "13",
+                "productId" : "1",
+                "productName" : "chai",
+                "supplierId" : "1",
+                "categoryId" : "1",
+                "unitPrice" : 18.00,
+                "unitsInStock" : 39,
+                "unitsInOrder" : 0,
+                "reorderLevel" : 10,
+                "discontinued" : 0
+
+            }
+
+        ]
+    },
+
+    {
+        "filename" : "customers",
+        "savedQueries" : [
+            {
+                "queryName" : "Chai products",
+                "queryDescription" : "select all columns of product chai",
+                "addedDate" : "12/04/22",
+                "author" : "Mukesh Rao",
+                "query" : "SELECT * FROM products WHERE productName = 'chai'"
+            }
+            ,
+            {
+                "queryName" : "Chai products",
+                "queryDescription" : "select all columns of product chai",
+                "addedDate" : "12/04/22",
+                "author" : "Mukesh Rao",
+                "query" : "SELECT * FROM products WHERE productName = 'tea'"
+            },
+            {
+                "queryName" : "Chai products",
+                "queryDescription" : "select all columns of product chai",
+                "addedDate" : "12/04/22",
+                "author" : "Mukesh Rao",
+                "query" : "SELECT * FROM products WHERE productName = 'coffee'"
+            },
+            {
+                "queryName" : "Chai products",
+                "queryDescription" : "select all columns of product chai",
+                "addedDate" : "12/04/22",
+                "author" : "Mukesh Rao",
+                "query" : "SELECT * FROM products WHERE productName = 'chai'"
+            },
+            {
+                "queryName" : "Chai products",
+                "queryDescription" : "select all columns of product chai",
+                "addedDate" : "12/04/22",
+                "author" : "Mukesh Rao",
+                "query" : "SELECT * FROM products WHERE productName = 'chai'"
+            }
+
+        ],
+        "columns" : ["id","customerId","customerName", "companyName", "address", "city", "region", "postalCode", "country"],
+        "rows" : [
+            {
+                "id" : "1",
+                "customerId" : "ALFK",
+                "customerName" : "Alan",
+                "companyName" : "Alfred Futtekriste",
+                "address" : "Obstere st 7",
+                "city" : "Berlin",
+                "region" : "",
+                "postalCode" : "122990",
+                "country" : "Germany"
+            },
+            {
+                "id" : "2",
+                "customerId" : "ALFK",
+                "customerName" : "Alan",
+                "companyName" : "Alfred Futtekriste",
+                "address" : "Obstere st 7",
+                "city" : "Berlin",
+                "region" : "",
+                "postalCode" : "122990",
+                "country" : "Germany"
+            },
+            {
+                "id" : "3",
+                "customerId" : "ALFK",
+                "customerName" : "Alan",
+                "companyName" : "Alfred Futtekriste",
+                "address" : "Obstere st 7",
+                "city" : "Berlin",
+                "region" : "",
+                "postalCode" : "122990",
+                "country" : "Germany"
+            },
+            {
+                "id" : "4",
+                "customerId" : "ALFK",
+                "customerName" : "Alan",
+                "companyName" : "Alfred Futtekriste",
+                "address" : "Obstere st 7",
+                "city" : "Berlin",
+                "region" : "",
+                "postalCode" : "122990",
+                "country" : "Germany"
+            },
+            {
+                "id" : "5",
+                "customerId" : "ALFK",
+                "customerName" : "Alan",
+                "companyName" : "Alfred Futtekriste",
+                "address" : "Obstere st 7",
+                "city" : "Berlin",
+                "region" : "",
+                "postalCode" : "122990",
+                "country" : "Germany"
+            },
+            {
+                "id" : "6",
+                "customerId" : "ALFK",
+                "customerName" : "Alan",
+                "companyName" : "Alfred Futtekriste",
+                "address" : "Obstere st 7",
+                "city" : "Berlin",
+                "region" : "",
+                "postalCode" : "122990",
+                "country" : "Germany"
+            },
+            {
+                "id" : "7",
+                "customerId" : "ALFK",
+                "customerName" : "Alan",
+                "companyName" : "Alfred Futtekriste",
+                "address" : "Obstere st 7",
+                "city" : "Berlin",
+                "region" : "",
+                "postalCode" : "122990",
+                "country" : "Germany"
+            }
+          
+            
+        ]
+    }
+]

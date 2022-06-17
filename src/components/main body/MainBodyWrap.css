@@ -1,0 +1,228 @@
+#mainBodyWrapper
+{
+    height : 100%;
+    width : 800px;
+
+    padding: 85px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(247, 247, 247);
+    align-items: center;
+}
+
+#sqlEditorWrapper
+{
+    height : 350px;
+    width : 100%;
+
+    
+}
+
+#sqlConsole
+{
+    padding : 20px;
+    height : 30px;
+    width : 94.5%;
+    background-color: white;  
+    overflow-y : scroll;
+    color : rgb(201, 122, 2);
+}
+
+#sqlEditor
+{
+    overflow-y :scroll;
+    padding : 20px;
+    height : 100%;
+    width : 94.5%;
+    background-color: white;
+}
+textarea {
+    
+    resize: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.098);
+    border-right: 1px solid rgba(0, 0, 0, 0.098);
+    border-left: 1px solid rgba(0, 0, 0, 0.098);
+    border-bottom: none;
+    box-shadow: none;
+    overflow: auto;
+    outline: none;
+    
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+
+   }
+
+#results
+{
+    margin : 30px;
+    padding : 10px 0px;
+    height : 700px;
+    width : 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#tableName
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+    color : rgba(0, 0, 0, 0.742);
+}
+
+#sqlEditorContainer
+{
+    height : 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#editorOptions
+{
+    width : 99.6%;
+    height : 50px;
+    background-color: rgb(255, 255, 255);
+    border-top : 1px dotted rgba(0, 0, 0, 0.121);
+    border-right : 1px dotted rgba(0, 0, 0, 0.121);
+    border-left : 1px dotted rgba(0, 0, 0, 0.121);
+
+    display: flex;
+    justify-content: flex-start;
+   
+}
+
+#runButton
+{
+    width : auto;
+    padding : 0px 8px;
+    border-radius: 2px;
+    height : 30px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    border : 1px dotted rgba(0, 0, 0, 0.189);
+    color : white;
+    background-color: rgba(0, 128, 0, 0.66);
+    justify-self: flex-end;
+    margin-right : 10px;
+    cursor: pointer;
+}
+
+
+.customButton
+{
+    cursor: pointer;
+    width : 100px;
+    padding : 0px 8px;
+    height : 30px;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    border : none;
+    border-right : 1px dotted rgba(0, 0, 0, 0.189);
+    color : black;
+    background-color: rgba(226, 231, 226, 0.66);
+    justify-self: flex-end;
+   
+}
+
+#customWidth
+{
+   
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+
+    color : black;
+    height : 30px;
+    margin : 0px 2px;
+   
+}
+
+
+#runOptions
+{
+    
+    width: 100%;
+    background-color: white;
+    padding : 0px 20px;
+    padding-top : 10px;
+    display: flex;
+
+}
+
+#tableOptions
+{
+    width: 100%;
+    display: flex;
+    justify-content :space-between;
+}
+
+#help
+{
+    height : 100px;
+    padding : 10px;
+    width : 400px;
+    background-color: rgb(225, 221, 221);
+    color : rgb(201, 122, 2);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.modalBody
+{
+    display: flex;
+    flex-direction : column;
+    align-items :stretch;
+
+}
+
+.modalBody
+{
+    
+    height : 100%;
+    width : 100%;
+}
+
+.saveName
+{
+    height: 30px;
+    width : 90%;
+    border-radius:  0;
+    border : 1px dotted rgba(0, 0, 0, 0.269);
+    margin : 5px;
+}
+
+.saveTextArea
+{
+    height : 50px;
+    width : 90%;
+    border-radius:  0;
+    border : 1px dotted rgba(0, 0, 0, 0.269);
+    margin : 5px;
+}
+
+.saveModal
+{
+    height : 30px;
+    width : 50px;
+    float: right;
+    margin-right: 18px;
+    border : 1px dotted rgba(0, 0, 0, 0.215);
+    background-color: rgba(0, 128, 0, 0.655);
+    color : white;
+}
+
+#numRows
+{
+    height : 25px;
+    width : 40px;
+    border : 1px dotted rgba(0, 0, 0, 0.215);
+}

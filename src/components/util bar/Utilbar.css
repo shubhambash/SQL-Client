@@ -1,0 +1,143 @@
+
+#utilBarWrapper
+{
+    height : 100%;
+    width : 350px;
+    background-color: rgb(247, 247, 247);
+    padding: 50px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#utilBarNav
+{
+ 
+
+    display: flex;
+    justify-content: center;
+    padding : 5px 2px;
+}
+
+.utilBarNavItem
+{
+    width : 90px;
+    
+    margin : 0px 4px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.utilNavItem{
+   
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    color : rgba(0, 0, 0, 0.623);
+    padding : 3px;
+    margin : 0px 5px;
+    border-bottom : 1px solid rgba(0, 0, 0, 0.059);
+    cursor: pointer;
+}
+
+.utilNavItemClicked{
+   
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    color : rgb(12, 71, 172);
+    padding : 3px;
+    margin : 0px 5px;
+    border-bottom : 2px solid rgb(12, 71, 172);
+    cursor: pointer;
+}
+
+
+#utilBarBody
+{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding : 30px 0px;
+}
+
+.cardItem
+{
+    margin: 10px 0px;
+    height : 100px;
+    width : 100%;
+    border : 1px dotted rgba(0, 0, 0, 0.176);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding : 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+}
+
+.cardHeading
+{
+    font-size: 20px;
+
+}
+
+
+.addedBy
+{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width : 100%;
+}
+
+.cardHeadingText
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color : rgba(21, 85, 181, 0.733);
+}
+
+.cardDescText
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.404);
+}
+
+.addedByText
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.539);
+    margin-left: 4px;
+    
+}
+
+.addedByDate
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.553);
+    
+}
+
+#tableNotSelected
+{
+    height : 100px;
+    padding : 10px;
+    width : 400px;
+    background-color: rgb(225, 221, 221);
+    color : rgb(201, 122, 2);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    
+}
+
