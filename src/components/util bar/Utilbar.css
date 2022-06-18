@@ -67,6 +67,7 @@
 
 .cardItem
 {
+    cursor: pointer;
     margin: 10px 0px;
     height : 100px;
     width : 100%;
@@ -77,6 +78,13 @@
     align-items: flex-start;
     padding : 10px 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+}
+
+.cardItem:hover
+{
+   
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     
 }
 

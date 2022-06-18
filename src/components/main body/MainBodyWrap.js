@@ -45,7 +45,7 @@ function MainBodyWrap({query}) {
     const [filters, setFilters] = useState([])
     const[consoleContent, setConsoleContent] = useState('>>')
     const [copied, setCopied] = useState(false)
-
+    const [fontsize, setFontSize] = useState(12)
     useEffect(() => {
         setSqlContent(query)
     }, [query])
@@ -69,6 +69,11 @@ function MainBodyWrap({query}) {
 
       const [open, setOpen] = useState(false)
       const [customOpen, setCustomOpen] = useState(false)
+      const [shareQOpen, setShareQOpen] = useState(false)
+
+      const handleShareQOpen = () => setShareQOpen(true)
+      const handleCloseShareQ = () => setShareQOpen(false)
+
       const handleSave = () => setOpen(true)
       const handleCloseSave = () => setOpen(false)
 
@@ -129,6 +134,9 @@ function MainBodyWrap({query}) {
                         &nbsp;&nbsp;help 
                     </button>
                 </Tippy>
+
+                <input id='numRows' min={12} max={30} type = "number" placeholder="size" onChange={(e) => {setFontSize(e.target.value)}}>
+          </input>
                                     
 
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -141,7 +149,7 @@ function MainBodyWrap({query}) {
 
 
 
-                    <button className='customButton'>
+                    <button className='customButton' onClick={handleShareQOpen}>
                     <i class="fas fa-share-alt" style={{opacity : '70%'}}></i>
                     &nbsp;&nbsp;share</button>
 
@@ -155,12 +163,13 @@ function MainBodyWrap({query}) {
                     <button className='customButton' onClick={handleCustom}>
                     <i class="fas fa-hammer" style={{opacity : '70%'}}></i>
                     &nbsp;&nbsp;custom</button>
+
                 </div>
 
                 </div>
                 
 
-                <textarea id='sqlEditor' value={sqlContent} onChange={(e) => {handleSqlContent(e)}}
+                <textarea id='sqlEditor' style={{fontSize : `${fontsize}px`}}  value={sqlContent} onChange={(e) => {handleSqlContent(e)}}
                 placeholder="/* Enter your SQL query here */">
                     
                 </textarea>
@@ -304,6 +313,52 @@ function MainBodyWrap({query}) {
         </Box>
       </Modal>
 
+
+
+
+      <Modal
+        open={shareQOpen}
+        onClose={handleCloseShareQ}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+
+            <div className='modalBody'>
+                <div>
+                <h3>Share Current Query With Team</h3>
+                </div>
+
+                    <div>
+                    <form>
+                    <div>
+                    <input className='saveName' placeholder='Enter Query Title'></input>
+                    </div>
+
+                    <div>
+                    <textarea className='saveTextArea' placeholder='Enter Query Description'></textarea>
+                    </div>
+
+
+                    <div>
+                    <textarea value={sqlContent} className='saveTextArea' placeholder='Enter SQL Query'></textarea>
+                    </div>
+                    
+
+                    <div>
+                    <button className='saveModal' type='submit'>Share 
+                   
+                   </button>
+                    </div>
+                    
+                </form>
+
+                    </div>
+                
+            </div>
+         
+        </Box>
+      </Modal>
 
 
     </>

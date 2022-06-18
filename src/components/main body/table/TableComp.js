@@ -2,6 +2,22 @@ import  React, {useEffect, useState} from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 
 
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 300,
+  bgcolor: 'background.paper',
+  border: '1px dotted #000',
+  boxShadow: 24,
+  p: 4,
+};
+
+
 
 export default function TableComp({table, filters}) {
 
@@ -11,6 +27,13 @@ export default function TableComp({table, filters}) {
     const [colsize, setColsize] = useState(120)
     const [rowsPPage, setRowsPPage] = useState(5)
     const [copied, setCopied] = useState(false)
+
+    const [shareOpen, setShareOpen] = useState(false)
+ 
+
+
+    const handleShare = () => setShareOpen(true)
+    const handleCloseShare = () => setShareOpen(false)
 
     useEffect(() => {
 
@@ -110,11 +133,12 @@ export default function TableComp({table, filters}) {
           </div>
      
           <div>
-          <button className='customButton'>
-                  <i class="fas fa-download" style={{opacity : '70%'}}></i>
-                
-                  &nbsp;&nbsp;excel
+          <button className='customButton' onClick={handleShare}>
+                    <i class="fas fa-share-alt" style={{opacity : '70%'}}></i>
+                    &nbsp;&nbsp;share
           </button>
+          
+      
           </div>
         
             <div>
@@ -138,19 +162,16 @@ export default function TableComp({table, filters}) {
           </button>
 
 
-          <input id='numRows' min={5} type = "number" placeholder="rows" onClick={(e) => {setRowsPPage(e.target.value)}}>
+          <input id='numRows' min={5} max={100} type = "number" placeholder="rows" onChange={(e) => {setRowsPPage(e.target.value)}}>
           </input>
           </div>
-        
-
-
-          
-          
-          
+  
       </div>
-
-
-    <div style={{ height: 400, width: '100%' }}>
+      <div style={{ height: 400, width: '100%' }}>
+    {table ? (
+      <>
+      
+     
       <DataGrid
         rows={rows}
         columns={columns}
@@ -171,8 +192,61 @@ export default function TableComp({table, filters}) {
           
         }}
       />
-    </div>
+  
 
+
+      </>
+    )
+    :
+    
+    (
+      <></>
+    )}
+     </div>
+
+
+
+
+
+     <Modal
+        open={shareOpen}
+        onClose={handleCloseShare}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+
+            <div className='modalBody'>
+                <div>
+                <h3>Share Current Table Data With Team</h3>
+                </div>
+
+                    <div>
+                    <form>
+                    <div>
+                    <input className='saveName' placeholder='Enter Title'></input>
+                    </div>
+
+                    <div>
+                    <textarea className='saveTextArea' placeholder='Enter Table Description'></textarea>
+                    </div>
+
+                    
+
+                    <div>
+                    <button className='saveModal' type='submit'>Share 
+                   
+                   </button>
+                    </div>
+                    
+                </form>
+
+                    </div>
+                
+            </div>
+         
+        </Box>
+      </Modal>
   </>
   );
 }

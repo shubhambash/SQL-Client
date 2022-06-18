@@ -32,6 +32,7 @@
 }
 
 .fileItemContainer{
+    cursor : pointer;
     margin : 5px 0px;
     width: 90%;
     border-bottom : 1px dotted rgba(0, 0, 0, 0.066);
