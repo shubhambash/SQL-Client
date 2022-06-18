@@ -14,9 +14,10 @@ This frontend application has the ability to select or import a database and per
 
 
 ## Libraries used
-1) **react-router-dom** : To set up basic routing ans links
-2)  **@tippyjs/react** : For setting up tooltips with ease
-3)  **@mui/x-data-grid** and **@mui/material** : This was the main library used for displaying the data in a tabular format dynamically. Also used for creating custom Modals
+1) **React** : React framework was used to build the UI
+2) **react-router-dom** : To set up basic routing ans links
+3)  **@tippyjs/react** : For setting up tooltips with ease
+4)  **@mui/x-data-grid** and **@mui/material** : This was the main library used for displaying the data in a tabular format dynamically. Also used for creating custom Modals
 
 ## Load and render speed
 ### Initial Performance Test
