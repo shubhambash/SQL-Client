@@ -34,7 +34,7 @@
 
 .utilNavItem{
    
-    font-family: 'Ubuntu', sans-serif;
+
     font-size: 17px;
     color : rgba(0, 0, 0, 0.623);
     padding : 3px;
@@ -44,8 +44,7 @@
 }
 
 .utilNavItemClicked{
-   
-    font-family: 'Ubuntu', sans-serif;
+
     font-size: 17px;
     color : rgb(12, 71, 172);
     padding : 3px;
@@ -105,7 +104,7 @@
 
 .cardHeadingText
 {
-    font-family: 'Ubuntu', sans-serif;
+   
     font-size: 20px;
     font-weight: 500;
     color : rgba(21, 85, 181, 0.733);
@@ -113,14 +112,14 @@
 
 .cardDescText
 {
-    font-family: 'Ubuntu', sans-serif;
+   
     font-size: 14px;
     color: rgba(0, 0, 0, 0.404);
 }
 
 .addedByText
 {
-    font-family: 'Ubuntu', sans-serif;
+    
     font-size: 14px;
     font-weight: 300;
     color: rgba(0, 0, 0, 0.539);
@@ -130,7 +129,7 @@
 
 .addedByDate
 {
-    font-family: 'Ubuntu', sans-serif;
+    
     font-size: 14px;
     color: rgba(0, 0, 0, 0.553);
     
@@ -143,7 +142,7 @@
     width : 400px;
     background-color: rgb(225, 221, 221);
     color : rgb(201, 122, 2);
-    font-family: 'Ubuntu', sans-serif;
+    
     font-size: 12px;
     font-weight: 300;
     

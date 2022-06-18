@@ -27,7 +27,7 @@
 .fileItem
 {
     padding : 0px 5px;
-    font-family: 'Ubuntu', sans-serif;
+    
     color : rgba(0, 0, 0, 0.758);
 }
 
@@ -42,7 +42,7 @@
 
 #dbName
 {
-    font-family: 'Ubuntu', sans-serif;
+ 
     font-size: 18px;
     font-weight: 500;
 }

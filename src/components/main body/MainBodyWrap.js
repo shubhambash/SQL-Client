@@ -88,7 +88,7 @@ function MainBodyWrap({query}) {
 
     <div id='increaseScreen'>
         <div id='increaseScreenMsg'>
-            <h1>Please Increase Screen Width To Use Editor<i class="fas fa-arrow-right"></i></h1>
+            <h4>Please Increase Screen Width To Use Editor</h4>
         </div>
     </div>
 
