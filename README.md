@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# SQL Editor (Atlan Task)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This frontend application has the ability to select or import a database and perform various SQL queries on its table. It has a editor area that takes in user SQL input and generates the corresponding table and displays it in an organised way. It has features to save , share, copy and build custom queries. Users also have an access to saved pre-defined queries, history of queries used and shared queries.  
 
-## Available Scripts
+###  Link to the deployed app
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+ - Selecting any table from the side bar displays all the queries related to this table that were saved, shared or accessed before
+ - Editor has a tool bar with options to copy, save, share , download queries. It also has a feature to build custom query.
+ - Editor offers a console that displays the query run time and status code
+ - Table view has features to copy related json data and share queries table.
+ - Table has features to custom select rows, sort columns, increase column width and rows displayed per page  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Libraries used
+1) **react-router-dom** : To set up basic routing ans links
+2)  **@tippyjs/react** : For setting up tooltips with ease
+3)  **@mui/x-data-grid** and **@mui/material** : This was the main library used for displaying the data in a tabular format dynamically. Also used for creating custom Modals
 
-### `npm test`
+## Load and render speed
+1) **react-router-dom** : To set up basic routing ans links
+2)  **@tippyjs/react** : For setting up tooltips with ease
+3)  **@mui/x-data-grid** and **@mui/material** : This was the main library used for displaying the data in a tabular format dynamically. Also used for creating custom Modals
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Optimizations
 
-### `npm run build`
+1) **Row Virtualization in Data-Grid**  : The grid is high performing thanks to its rows and columns virtualization engine. DOM virtualization is the feature that allows the grid to handle an unlimited number of rows and columns. This is a built-in feature of the rendering engine and greatly improves rendering performance.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+	Row virtualization is the insertion and removal of rows as the grid scrolls vertically.
+The grid renders twice as many rows as are visible. It isn't configurable yet. Row virtualization is limited to 100 rows in the  `DataGrid`  component. This greatly impacts the performance of this app as the app constantly renders and re-renders hundreads of rows and columns of data dynamically.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2) **React Context API** : Context provides a way to pass data through the component tree without having to pass props down manually at every level. This solves the problem of prop drilling that greatly affects the app performance.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+	> In a typical React application, data is passed top-down (parent to child) via props, but such usage can be cumbersome for certain types of props (e.g. locale preference, UI theme) that are required by many components within an application. Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+	In case of this react app, table and setTable were two states that were used by children components with the help of Context API
+3) **Storing states locally as much as possible** : Instead of using a state management library such as Redux, most states were stored and used locally to reduce overheads.
+4) **Use of React Fragments <> </>**  : In order to avoid the DOM from creating several useless Nodes,  <React.Fragment> has been used in many instances.
+5) **Using React Production Build** : The production build creates minified bundles, lighter-weight source maps, and optimized assets. This improves the load time. React recommends using production mode while deploying the react app.
