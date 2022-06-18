@@ -3,7 +3,7 @@
 This frontend application has the ability to select or import a database and perform various SQL queries on its table. It has a editor area that takes in user SQL input and generates the corresponding table and displays it in an organised way. It has features to save , share, copy and build custom queries. Users also have an access to saved pre-defined queries, history of queries used and shared queries.  
 
 ###  Link to the deployed app 
-[Atlan Project Link](https://62add181b37d4a7c6399cda4--curious-seahorse-4ca5a6.netlify.app/)
+[Link to project](https://62adf951e48690173777adc2--curious-seahorse-4ca5a6.netlify.app/)
 ## Features
 
  - Selecting any table from the side bar displays all the queries related to this table that were saved, shared or accessed before
