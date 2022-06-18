@@ -98,6 +98,19 @@ export default function TableComp({table, filters}) {
        
       }
     }
+
+    const handleRow = (e) => {
+
+      if(e.target.value > 100)
+      {
+          return
+      }
+      else
+      {
+          setRowsPPage(e.target.value)
+      }
+    
+    }
     
     const [selectedRows, setSelectedRows] = useState(rows)
 
@@ -162,7 +175,7 @@ export default function TableComp({table, filters}) {
           </button>
 
 
-          <input id='numRows' min={5} max={100} type = "number" placeholder="rows" onChange={(e) => {setRowsPPage(e.target.value)}}>
+          <input id='numRows' min={5} max={100} type = "number" placeholder="rows" onChange={(e) => {handleRow(e)}}>
           </input>
           </div>
   
