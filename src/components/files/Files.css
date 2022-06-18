@@ -1,3 +1,4 @@
+
 #files
 {
     height : 100%;
@@ -32,7 +33,7 @@
 
 .fileItemContainer{
     margin : 5px 0px;
-    width: 80%;
+    width: 90%;
     border-bottom : 1px dotted rgba(0, 0, 0, 0.066);
     border-top : 1px dotted rgba(0, 0, 0, 0.066);
     padding : 3px;
@@ -58,4 +59,39 @@
     align-items: flex-start;
     flex-direction: column;
 }
+@media screen and (max-width : 1300px)
+{
+    #files{
+        width : 100px;
+    }
 
+    .fileSubItemConatiner
+    {
+        display: none;
+    }
+
+    #dbName
+    {
+
+        font-size: 13px;
+
+    }
+}
+
+
+@media screen and (max-width : 1015px)
+{
+    
+    #files{
+        width : 150px;
+    }
+  
+
+}
+
+@media screen and (max-width : 856px)
+{
+    #files{
+        display : none;
+    }
+}

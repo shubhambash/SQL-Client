@@ -251,45 +251,86 @@
 
     {
         "filename" : "customers",
-        "savedQueries" : [
+        "historyQueries" : [
+            
             {
-                "queryName" : "Chai products",
-                "queryDescription" : "select all columns of product chai",
-                "addedDate" : "12/04/22",
-                "author" : "Mukesh Rao",
-                "query" : "SELECT * FROM products WHERE productName = 'chai'"
+                "queryName" : "Get All Indian Customers",
+                "queryDescription" : "select all rows that belong to Ind customer",
+                "addedDate" : "2/04/22",
+                "daysAgo" : "7",
+                "author" : "Saksham Bist",
+                "query" : "SELECT * FROM customers WHERE country = 'India'"
             }
             ,
+          
             {
-                "queryName" : "Chai products",
-                "queryDescription" : "select all columns of product chai",
-                "addedDate" : "12/04/22",
-                "author" : "Mukesh Rao",
-                "query" : "SELECT * FROM products WHERE productName = 'tea'"
+                "queryName" : "Regular Customers",
+                "queryDescription" : "most valued customers of our Org ",
+                "addedDate" : "11/02/22",
+                "daysAgo" : "38",
+                "author" : "Arun Harwani",
+                "query" : "SELECT companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30"
             },
             {
-                "queryName" : "Chai products",
-                "queryDescription" : "select all columns of product chai",
-                "addedDate" : "12/04/22",
-                "author" : "Mukesh Rao",
-                "query" : "SELECT * FROM products WHERE productName = 'coffee'"
-            },
-            {
-                "queryName" : "Chai products",
-                "queryDescription" : "select all columns of product chai",
-                "addedDate" : "12/04/22",
-                "author" : "Mukesh Rao",
-                "query" : "SELECT * FROM products WHERE productName = 'chai'"
-            },
-            {
-                "queryName" : "Chai products",
-                "queryDescription" : "select all columns of product chai",
-                "addedDate" : "12/04/22",
-                "author" : "Mukesh Rao",
-                "query" : "SELECT * FROM products WHERE productName = 'chai'"
+                "queryName" : "Ids In Sorted Order",
+                "queryDescription" : "get customer Ids in sorted order",
+                "addedDate" : "9/03/22",
+                "daysAgo" : "30",
+                "author" : "Arun Harwani",
+                "query" : "SELECT * FROM customers WHERE customerId SORTED"
             }
 
         ],
+        "sharedQueries" : [
+            {
+                "queryName" : "Spam Customers",
+                "queryDescription" : "customers that appear to be irregular or bots",
+                "addedDate" : "21/04/22",
+                "daysAgo" : "1",
+                "author" : "Shubham Kumar",
+                "query" : "SELECT * FROM products WHERE spam = true INNER JOIN companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30"
+            }
+
+
+        ],
+        "savedQueries" : [
+            {
+                "queryName" : "Get All Indian Customers",
+                "queryDescription" : "select all rows that belong to Ind customer",
+                "addedDate" : "2/04/22",
+                "daysAgo" : "7",
+                "author" : "Saksham Bist",
+                "query" : "SELECT * FROM customers WHERE country = 'India'"
+            }
+            ,
+            {
+                "queryName" : "Ids In Sorted Order",
+                "queryDescription" : "get customer Ids in sorted order",
+                "addedDate" : "9/03/22",
+                "daysAgo" : "30",
+                "author" : "Arun Harwani",
+                "query" : "SELECT * FROM customers WHERE customerId SORTED"
+            },
+            {
+                "queryName" : "Regular Customers",
+                "queryDescription" : "most valued customers of our Org ",
+                "addedDate" : "11/02/22",
+                "daysAgo" : "38",
+                "author" : "Arun Harwani",
+                "query" : "SELECT companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30"
+            },
+            {
+                "queryName" : "Spam Customers",
+                "queryDescription" : "customers that appear to be irregular or bots",
+                "addedDate" : "21/04/22",
+                "daysAgo" : "1",
+                "author" : "Shubham Kumar",
+                "query" : "SELECT * FROM products WHERE spam = true INNER JOIN companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30"
+            }
+        
+
+        ],
+       
         "columns" : ["id","customerId","customerName", "companyName", "address", "city", "region", "postalCode", "country"],
         "rows" : [
             {
@@ -305,50 +346,106 @@
             },
             {
                 "id" : "2",
-                "customerId" : "ALFK",
-                "customerName" : "Alan",
-                "companyName" : "Alfred Futtekriste",
-                "address" : "Obstere st 7",
-                "city" : "Berlin",
+                "customerId" : "BKFT",
+                "customerName" : "Jimmy",
+                "companyName" : "Jimmy Alestein",
+                "address" : "Prim st 18",
+                "city" : "London",
                 "region" : "",
-                "postalCode" : "122990",
-                "country" : "Germany"
+                "postalCode" : "121230",
+                "country" : "UK"
             },
             {
                 "id" : "3",
-                "customerId" : "ALFK",
-                "customerName" : "Alan",
-                "companyName" : "Alfred Futtekriste",
-                "address" : "Obstere st 7",
-                "city" : "Berlin",
+                "customerId" : "DVJ",
+                "customerName" : "Krit",
+                "companyName" : "Apple Co",
+                "address" : "Junchime",
+                "city" : "Rome",
                 "region" : "",
-                "postalCode" : "122990",
-                "country" : "Germany"
+                "postalCode" : "8917",
+                "country" : "Italy"
             },
             {
                 "id" : "4",
-                "customerId" : "ALFK",
-                "customerName" : "Alan",
-                "companyName" : "Alfred Futtekriste",
-                "address" : "Obstere st 7",
-                "city" : "Berlin",
+                "customerId" : "JUCCL",
+                "customerName" : "Juchem hyme",
+                "companyName" : "Atlantis",
+                "address" : "Oberoin",
+                "city" : "Fttersberg",
                 "region" : "",
-                "postalCode" : "122990",
-                "country" : "Germany"
+                "postalCode" : "973990",
+                "country" : "Romania"
             },
             {
                 "id" : "5",
-                "customerId" : "ALFK",
-                "customerName" : "Alan",
-                "companyName" : "Alfred Futtekriste",
-                "address" : "Obstere st 7",
-                "city" : "Berlin",
+                "customerId" : "PPNT",
+                "customerName" : "Mitshu Chin",
+                "companyName" : "Chingu Na",
+                "address" : "Cheng Du",
+                "city" : "Cheng Du",
                 "region" : "",
-                "postalCode" : "122990",
-                "country" : "Germany"
+                "postalCode" : "42532",
+                "country" : "China"
             },
             {
                 "id" : "6",
+                "customerId" : "SHUSK",
+                "customerName" : "Shubham",
+                "companyName" : "Atlan",
+                "address" : "Rohini - 15",
+                "city" : "Delhi",
+                "region" : "",
+                "postalCode" : "6606660",
+                "country" : "India"
+            },
+            {
+                "id" : "7",
+                "customerId" : "ARKH",
+                "customerName" : "Arif",
+                "companyName" : "NTC Co",
+                "address" : "Rohini - 16",
+                "city" : "Delhi",
+                "region" : "",
+                "postalCode" : "6606660",
+                "country" : "India"
+            }
+            ,
+            {
+                "id" : "8",
+                "customerId" : "ADFD",
+                "customerName" : "Junks",
+                "companyName" : "Company X",
+                "address" : "Robbin - 16",
+                "city" : "Kumaed",
+                "region" : "",
+                "postalCode" : "234324",
+                "country" : "Korea"
+            },
+            {
+                "id" : "9",
+                "customerId" : "LKVB",
+                "customerName" : "Pgsyvsa",
+                "companyName" : "Pingu na",
+                "address" : "Robder st 6",
+                "city" : "Zinter",
+                "region" : "",
+                "postalCode" : "233245325",
+                "country" : "Greece"
+            },
+            {
+                "id" : "10",
+                "customerId" : "POSC",
+                "customerName" : "Butterkein",
+                "companyName" : "Berlisr na",
+                "address" : "Zinerelsi st 19 La",
+                "city" : "Budweisers",
+                "region" : "",
+                "postalCode" : "854",
+                "country" : "germany"
+            },
+            {
+                "id" : "11",
                 "customerId" : "ALFK",
                 "customerName" : "Alan",
                 "companyName" : "Alfred Futtekriste",
@@ -359,7 +456,107 @@
                 "country" : "Germany"
             },
             {
-                "id" : "7",
+                "id" : "12",
+                "customerId" : "BKFT",
+                "customerName" : "Jimmy",
+                "companyName" : "Jimmy Alestein",
+                "address" : "Prim st 18",
+                "city" : "London",
+                "region" : "",
+                "postalCode" : "121230",
+                "country" : "UK"
+            },
+            {
+                "id" : "13",
+                "customerId" : "DVJ",
+                "customerName" : "Krit",
+                "companyName" : "Apple Co",
+                "address" : "Junchime",
+                "city" : "Rome",
+                "region" : "",
+                "postalCode" : "8917",
+                "country" : "Italy"
+            },
+            {
+                "id" : "14",
+                "customerId" : "JUCCL",
+                "customerName" : "Juchem hyme",
+                "companyName" : "Atlantis",
+                "address" : "Oberoin",
+                "city" : "Fttersberg",
+                "region" : "",
+                "postalCode" : "973990",
+                "country" : "Romania"
+            },
+            {
+                "id" : "15",
+                "customerId" : "PPNT",
+                "customerName" : "Mitshu Chin",
+                "companyName" : "Chingu Na",
+                "address" : "Cheng Du",
+                "city" : "Cheng Du",
+                "region" : "",
+                "postalCode" : "42532",
+                "country" : "China"
+            },
+            {
+                "id" : "16",
+                "customerId" : "SHUSK",
+                "customerName" : "Shubham",
+                "companyName" : "Atlan",
+                "address" : "Rohini - 15",
+                "city" : "Delhi",
+                "region" : "",
+                "postalCode" : "6606660",
+                "country" : "India"
+            },
+            {
+                "id" : "17",
+                "customerId" : "ARKH",
+                "customerName" : "Arif",
+                "companyName" : "NTC Co",
+                "address" : "Rohini - 16",
+                "city" : "Delhi",
+                "region" : "",
+                "postalCode" : "6606660",
+                "country" : "India"
+            }
+            ,
+            {
+                "id" : "18",
+                "customerId" : "ADFD",
+                "customerName" : "Junks",
+                "companyName" : "Company X",
+                "address" : "Robbin - 16",
+                "city" : "Kumaed",
+                "region" : "",
+                "postalCode" : "234324",
+                "country" : "Korea"
+            },
+            {
+                "id" : "19",
+                "customerId" : "LKVB",
+                "customerName" : "Pgsyvsa",
+                "companyName" : "Pingu na",
+                "address" : "Robder st 6",
+                "city" : "Zinter",
+                "region" : "",
+                "postalCode" : "233245325",
+                "country" : "Greece"
+            },
+            {
+                "id" : "20",
+                "customerId" : "POSC",
+                "customerName" : "Butterkein",
+                "companyName" : "Berlisr na",
+                "address" : "Zinerelsi st 19 La",
+                "city" : "Budweisers",
+                "region" : "",
+                "postalCode" : "854",
+                "country" : "germany"
+            },
+            {
+                "id" : "21",
                 "customerId" : "ALFK",
                 "customerName" : "Alan",
                 "companyName" : "Alfred Futtekriste",
@@ -368,6 +565,217 @@
                 "region" : "",
                 "postalCode" : "122990",
                 "country" : "Germany"
+            },
+            {
+                "id" : "22",
+                "customerId" : "BKFT",
+                "customerName" : "Jimmy",
+                "companyName" : "Jimmy Alestein",
+                "address" : "Prim st 18",
+                "city" : "London",
+                "region" : "",
+                "postalCode" : "121230",
+                "country" : "UK"
+            },
+            {
+                "id" : "23",
+                "customerId" : "DVJ",
+                "customerName" : "Krit",
+                "companyName" : "Apple Co",
+                "address" : "Junchime",
+                "city" : "Rome",
+                "region" : "",
+                "postalCode" : "8917",
+                "country" : "Italy"
+            },
+            {
+                "id" : "24",
+                "customerId" : "JUCCL",
+                "customerName" : "Juchem hyme",
+                "companyName" : "Atlantis",
+                "address" : "Oberoin",
+                "city" : "Fttersberg",
+                "region" : "",
+                "postalCode" : "973990",
+                "country" : "Romania"
+            },
+            {
+                "id" : "25",
+                "customerId" : "PPNT",
+                "customerName" : "Mitshu Chin",
+                "companyName" : "Chingu Na",
+                "address" : "Cheng Du",
+                "city" : "Cheng Du",
+                "region" : "",
+                "postalCode" : "42532",
+                "country" : "China"
+            },
+            {
+                "id" : "26",
+                "customerId" : "SHUSK",
+                "customerName" : "Shubham",
+                "companyName" : "Atlan",
+                "address" : "Rohini - 15",
+                "city" : "Delhi",
+                "region" : "",
+                "postalCode" : "6606660",
+                "country" : "India"
+            },
+            {
+                "id" : "27",
+                "customerId" : "ARKH",
+                "customerName" : "Arif",
+                "companyName" : "NTC Co",
+                "address" : "Rohini - 16",
+                "city" : "Delhi",
+                "region" : "",
+                "postalCode" : "6606660",
+                "country" : "India"
+            }
+            ,
+            {
+                "id" : "28",
+                "customerId" : "ADFD",
+                "customerName" : "Junks",
+                "companyName" : "Company X",
+                "address" : "Robbin - 16",
+                "city" : "Kumaed",
+                "region" : "",
+                "postalCode" : "234324",
+                "country" : "Korea"
+            },
+            {
+                "id" : "29",
+                "customerId" : "LKVB",
+                "customerName" : "Pgsyvsa",
+                "companyName" : "Pingu na",
+                "address" : "Robder st 6",
+                "city" : "Zinter",
+                "region" : "",
+                "postalCode" : "233245325",
+                "country" : "Greece"
+            },
+            {
+                "id" : "30",
+                "customerId" : "POSC",
+                "customerName" : "Butterkein",
+                "companyName" : "Berlisr na",
+                "address" : "Zinerelsi st 19 La",
+                "city" : "Budweisers",
+                "region" : "",
+                "postalCode" : "854",
+                "country" : "germany"
+            },
+            {
+                "id" : "11",
+                "customerId" : "ALFK",
+                "customerName" : "Alan",
+                "companyName" : "Alfred Futtekriste",
+                "address" : "Obstere st 7",
+                "city" : "Berlin",
+                "region" : "",
+                "postalCode" : "122990",
+                "country" : "Germany"
+            },
+            {
+                "id" : "12",
+                "customerId" : "BKFT",
+                "customerName" : "Jimmy",
+                "companyName" : "Jimmy Alestein",
+                "address" : "Prim st 18",
+                "city" : "London",
+                "region" : "",
+                "postalCode" : "121230",
+                "country" : "UK"
+            },
+            {
+                "id" : "13",
+                "customerId" : "DVJ",
+                "customerName" : "Krit",
+                "companyName" : "Apple Co",
+                "address" : "Junchime",
+                "city" : "Rome",
+                "region" : "",
+                "postalCode" : "8917",
+                "country" : "Italy"
+            },
+            {
+                "id" : "14",
+                "customerId" : "JUCCL",
+                "customerName" : "Juchem hyme",
+                "companyName" : "Atlantis",
+                "address" : "Oberoin",
+                "city" : "Fttersberg",
+                "region" : "",
+                "postalCode" : "973990",
+                "country" : "Romania"
+            },
+            {
+                "id" : "15",
+                "customerId" : "PPNT",
+                "customerName" : "Mitshu Chin",
+                "companyName" : "Chingu Na",
+                "address" : "Cheng Du",
+                "city" : "Cheng Du",
+                "region" : "",
+                "postalCode" : "42532",
+                "country" : "China"
+            },
+            {
+                "id" : "16",
+                "customerId" : "SHUSK",
+                "customerName" : "Shubham",
+                "companyName" : "Atlan",
+                "address" : "Rohini - 15",
+                "city" : "Delhi",
+                "region" : "",
+                "postalCode" : "6606660",
+                "country" : "India"
+            },
+            {
+                "id" : "17",
+                "customerId" : "ARKH",
+                "customerName" : "Arif",
+                "companyName" : "NTC Co",
+                "address" : "Rohini - 16",
+                "city" : "Delhi",
+                "region" : "",
+                "postalCode" : "6606660",
+                "country" : "India"
+            }
+            ,
+            {
+                "id" : "18",
+                "customerId" : "ADFD",
+                "customerName" : "Junks",
+                "companyName" : "Company X",
+                "address" : "Robbin - 16",
+                "city" : "Kumaed",
+                "region" : "",
+                "postalCode" : "234324",
+                "country" : "Korea"
+            },
+            {
+                "id" : "19",
+                "customerId" : "LKVB",
+                "customerName" : "Pgsyvsa",
+                "companyName" : "Pingu na",
+                "address" : "Robder st 6",
+                "city" : "Zinter",
+                "region" : "",
+                "postalCode" : "233245325",
+                "country" : "Greece"
+            },
+            {
+                "id" : "20",
+                "customerId" : "POSC",
+                "customerName" : "Butterkein",
+                "companyName" : "Berlisr na",
+                "address" : "Zinerelsi st 19 La",
+                "city" : "Budweisers",
+                "region" : "",
+                "postalCode" : "854",
+                "country" : "germany"
             }
           
             

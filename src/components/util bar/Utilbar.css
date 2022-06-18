@@ -141,3 +141,37 @@
     
 }
 
+@media screen and (max-width : 1250px)
+{
+    
+    #utilBarWrapper
+    {
+        width : 250px;     
+    }
+
+    
+    .utilBarNavItem
+    {
+        width : 60px;
+    }
+
+    .addedBy
+    {
+       display: none; 
+    }
+
+
+}
+
+@media screen and (max-width : 1015px)
+{
+    
+    #utilBarWrapper
+    {
+       display: none;    
+    }
+
+  
+
+}
+

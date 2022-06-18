@@ -32,8 +32,11 @@ function MainBodyWrap({query}) {
         "SELECT * FROM products WHERE productName = 'chai'" : [1,1,0],
         "SELECT * FROM products WHERE unitsInOrder SORTED" : [2,5,0],
         "SELECT productName, supplierid FROM products WHERE discontinued = 0" : [4,6,0],
-        "SELECT productId, productName, unitPrice FROM products WHERE unitPrice BETWEEN 1000 AND 3000" : [5,5,5]        
-
+        "SELECT productId, productName, unitPrice FROM products WHERE unitPrice BETWEEN 1000 AND 3000" : [5,5,5],    
+        "SELECT * FROM customers WHERE country = 'India'" : [1,2,0],
+        "SELECT * FROM customers WHERE customerId SORTED" : [1,5,8],
+        "SELECT companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30" : [3,3,6],
+        "SELECT * FROM products WHERE spam = true INNER JOIN companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30" : [1,5,16]
     }
 
 
@@ -77,6 +80,12 @@ function MainBodyWrap({query}) {
 
   return (
     <>
+
+    <div id='increaseScreen'>
+        <div id='increaseScreenMsg'>
+            <h1>Please Increase Screen Width To Use Editor<i class="fas fa-arrow-right"></i></h1>
+        </div>
+    </div>
 
     <div id='mainBodyWrapper'>
 

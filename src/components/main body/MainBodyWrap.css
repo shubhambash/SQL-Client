@@ -1,3 +1,7 @@
+#increaseScreen
+{
+    display: none;
+}
 #mainBodyWrapper
 {
     height : 100%;
@@ -161,6 +165,7 @@ textarea {
 {
     width: 100%;
     display: flex;
+
     justify-content :space-between;
 }
 
@@ -225,4 +230,30 @@ textarea {
     height : 25px;
     width : 40px;
     border : 1px dotted rgba(0, 0, 0, 0.215);
+}
+
+@media screen and (max-width : 856px)
+{
+    #mainBodyWrapper
+    {
+        display: none;
+    }
+
+    #increaseScreen
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #increaseScreenMsg
+    {
+        padding : 20px;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 21px;
+        font-weight: 500;
+        color : rgba(0, 0, 0, 0.742);
+    }
+
 }

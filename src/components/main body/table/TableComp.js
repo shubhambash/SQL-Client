@@ -83,13 +83,13 @@ export default function TableComp({table, filters}) {
 
           <div id='tableOptions'> 
           <div>
-              <span style={{fontSize : '18px'}}>Table : </span><span id='tableName'>{table?.filename ? table?.filename : (<><span style={{fontSize : '18px'}}>(--Not Selected--)</span></>)}</span>
+              <span style={{fontSize : '18px'}}>Table : </span><span id='tableName'>{table?.filename ?(<>{table?.filename}{' '}({rows?.length} entries)</>) : (<><span style={{fontSize : '18px'}}>(--Not Selected--)</span></>)}</span>
           </div>
 
-          <div>
+         
  
 
-
+          <div>
           {copied ? (<>
 
             <button className='customButton' key={1} style={{color : 'green'}}>
@@ -107,16 +107,17 @@ export default function TableComp({table, filters}) {
              </button>
           
           </>)}
-
-          &nbsp;&nbsp;&nbsp;&nbsp;
-
+          </div>
+     
+          <div>
           <button className='customButton'>
                   <i class="fas fa-download" style={{opacity : '70%'}}></i>
                 
                   &nbsp;&nbsp;excel
           </button>
-
-          &nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+        
+            <div>
 
           <button className='customButton' style={{width : '30px', padding : '5px'}}
           onClick={(e) => {setColsize(prev => prev - 5)}}>
@@ -139,8 +140,8 @@ export default function TableComp({table, filters}) {
 
           <input id='numRows' min={5} type = "number" placeholder="rows" onClick={(e) => {setRowsPPage(e.target.value)}}>
           </input>
-
           </div>
+        
 
 
           

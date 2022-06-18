@@ -45,7 +45,7 @@ function Files({content}) {
                     <div className='fileItemContainer' key = {index} onClick={selectTable(O)}>
                     <i class="fas fa-angle-right"></i>
 
-                        <span className='fileItem'>{O?.filename}</span>
+                        <span className='fileItem'>{O?.filename} <span style={{color : 'rgb(201, 122, 2)'}}>({O.columns.length} </span>cols, <span style={{color : 'rgb(201, 122, 2)'}}>{O.rows.length}</span> rows )</span>
 
                         
  
