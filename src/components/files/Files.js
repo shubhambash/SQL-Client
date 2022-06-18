@@ -7,7 +7,7 @@ import {TableContext} from './Context'
 
 function Files({content}) {
 
-    
+    // using the Context API
     const {table, setTable} = useContext(TableContext)
     const [subItems, setSubItems] = useState(null)
     
@@ -21,9 +21,7 @@ function Files({content}) {
         }
     }
 
-    //use context api to store selected table as object
-    //util bar and table display will use this state later
-
+ 
 
   return (
     <>
@@ -99,11 +97,6 @@ function Files({content}) {
           
             <Utilbar/>
        
-               
-   
-            
-
-
 
     </>
   )

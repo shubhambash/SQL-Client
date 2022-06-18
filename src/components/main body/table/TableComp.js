@@ -27,9 +27,8 @@ export default function TableComp({table, filters}) {
     const [colsize, setColsize] = useState(120)
     const [rowsPPage, setRowsPPage] = useState(5)
     const [copied, setCopied] = useState(false)
-
     const [shareOpen, setShareOpen] = useState(false)
- 
+    const [selectedRows, setSelectedRows] = useState(rows)
 
 
     const handleShare = () => setShareOpen(true)
@@ -112,7 +111,7 @@ export default function TableComp({table, filters}) {
     
     }
     
-    const [selectedRows, setSelectedRows] = useState(rows)
+    
 
   return (
     <>
@@ -145,16 +144,19 @@ export default function TableComp({table, filters}) {
           </>)}
           </div>
      
+
           <div>
+
           <button className='customButton' onClick={handleShare}>
                     <i class="fas fa-share-alt" style={{opacity : '70%'}}></i>
                     &nbsp;&nbsp;share
           </button>
           
-      
           </div>
         
-            <div>
+
+
+          <div>
 
           <button className='customButton' style={{width : '30px', padding : '5px'}}
           onClick={(e) => {setColsize(prev => prev - 5)}}>
@@ -163,25 +165,34 @@ export default function TableComp({table, filters}) {
       
           </button>
 
+
+
           <span id='customWidth'>
           column width
           </span>
           
 
+
           <button className='customButton' style={{width : '30px',padding : '5px', marginRight : '5px'}}
           onClick={(e) => {setColsize(prev => prev + 5)}}>
                    
           <i class="fas fa-plus" style={{opacity : '70%'}}></i>
+
           </button>
 
 
           <input id='numRows' min={5} max={100} type = "number" placeholder="rows" onChange={(e) => {handleRow(e)}}>
           </input>
+
           </div>
   
       </div>
+
+
       <div style={{ height: 400, width: '100%' }}>
-    {table ? (
+
+        {/* loading DataGrid only when table data available to cut performance cost */}
+      {table ? (
       <>
       
      
@@ -192,6 +203,7 @@ export default function TableComp({table, filters}) {
         rowsPerPageOptions={[5]}
         checkboxSelection
 
+        // getting selected rows data in JSON format 
         onSelectionModelChange={ids => {
           const selectedIDs = new Set(ids);
          const selectedRowData = rows?.filter((row) => {
@@ -220,6 +232,7 @@ export default function TableComp({table, filters}) {
 
 
 
+    {/* modal */}
 
      <Modal
         open={shareOpen}

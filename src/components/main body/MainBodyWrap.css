@@ -73,7 +73,7 @@ textarea {
 
 #tableName
 {
-    font-family: 'Ubuntu', sans-serif;
+ 
     font-size: 21px;
     font-weight: 500;
     color : rgba(0, 0, 0, 0.742);
@@ -106,7 +106,7 @@ textarea {
     padding : 0px 8px;
     border-radius: 2px;
     height : 30px;
-    font-family: 'Ubuntu', sans-serif;
+
     font-size: 18px;
     font-weight: 500;
     border : 1px dotted rgba(0, 0, 0, 0.189);
@@ -125,7 +125,7 @@ textarea {
     padding : 0px 8px;
     height : 30px;
 
-    font-family: 'Ubuntu', sans-serif;
+
     font-size: 12px;
     font-weight: 300;
     border : none;
@@ -139,7 +139,7 @@ textarea {
 #customWidth
 {
    
-    font-family: 'Ubuntu', sans-serif;
+   
     font-size: 12px;
     font-weight: 300;
 
@@ -176,7 +176,7 @@ textarea {
     width : 400px;
     background-color: rgb(225, 221, 221);
     color : rgb(201, 122, 2);
-    font-family: 'Ubuntu', sans-serif;
+   
     font-size: 12px;
     font-weight: 300;
 }
@@ -251,7 +251,7 @@ textarea {
     #increaseScreenMsg
     {
         padding : 20px;
-        font-family: 'Ubuntu', sans-serif;
+
         font-size: 21px;
         font-weight: 500;
         color : rgba(0, 0, 0, 0.742);

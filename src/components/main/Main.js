@@ -9,13 +9,10 @@ function Main() {
         <div id='mainWrapper'>
 
             <div id='mainContainer'>
-
+              
             <Context>
                 <Sidebar />
             </Context>
-           
-              
-
 
             </div>
 

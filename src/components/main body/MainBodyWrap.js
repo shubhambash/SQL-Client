@@ -26,7 +26,7 @@ const style = {
 function MainBodyWrap({query}) {
 
 
-
+    // dummy data to generate SQL run simulations
     const dummySqlResultGenerator = 
     {
         "SELECT * FROM products WHERE productName = 'chai'" : [1,1,0],
@@ -36,7 +36,12 @@ function MainBodyWrap({query}) {
         "SELECT * FROM customers WHERE country = 'India'" : [1,2,0],
         "SELECT * FROM customers WHERE customerId SORTED" : [1,5,8],
         "SELECT companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30" : [3,3,6],
-        "SELECT * FROM products WHERE spam = true INNER JOIN companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30" : [1,5,16]
+        "SELECT * FROM products WHERE spam = true INNER JOIN companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30" : [1,5,16],
+        "SELECT saleId FROM sales WHERE unitsInStock MINIMUM" : [1,3,550],
+        "SELECT * FROM sales WHERE sales insight" : [0,0,500],
+        "SELECT saleId,maxBuyers FROM products WHERE some_attributes" : [1,1,100],
+        "SELECT * FROM products WHERE unitsInStock MAXIMUM" : [1,4,600]
+
     }
 
 
@@ -46,6 +51,7 @@ function MainBodyWrap({query}) {
     const[consoleContent, setConsoleContent] = useState('>>')
     const [copied, setCopied] = useState(false)
     const [fontsize, setFontSize] = useState(12)
+
     useEffect(() => {
         setSqlContent(query)
     }, [query])
@@ -53,7 +59,6 @@ function MainBodyWrap({query}) {
 
 
     const handleSqlContent = (e) => {setSqlContent(e.target.value)}
-
     const handleCopy = (sqlContent) => {
         return (e) => {
           navigator.clipboard.writeText(sqlContent)
@@ -67,6 +72,7 @@ function MainBodyWrap({query}) {
       }
 
 
+    // modal related states and methods
       const [open, setOpen] = useState(false)
       const [customOpen, setCustomOpen] = useState(false)
       const [shareQOpen, setShareQOpen] = useState(false)
@@ -125,18 +131,25 @@ function MainBodyWrap({query}) {
 
 
                     
-                <Tippy placement='bottom' content={<div id='help'><p>
+                <Tippy placement='bottom' 
+                content={<div id='help'>
+                    <p>
                     Either select a pre-defined query from the util bar on the right side or write your own query
                     </p>
-                    <p>You may build your own custom query by clicking custom on the sql menu</p></div>}>
+                    <p>
+                        You may build your own custom query by clicking custom on the sql menu
+                    </p></div>}
+                >
+
                     <button className='customButton'>
                         <i class="fas fa-info-circle" style={{opacity : '70%'}}></i>
                         &nbsp;&nbsp;help 
                     </button>
+
                 </Tippy>
 
                 <input id='numRows' min={12} max={30} type = "number" placeholder="size" onChange={(e) => {setFontSize(e.target.value)}}>
-          </input>
+                </input>
                                     
 
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -168,13 +181,13 @@ function MainBodyWrap({query}) {
 
                 </div>
                 
-
+                {/* SQL Editor Textarea */}
                 <textarea id='sqlEditor' style={{fontSize : `${fontsize}px`}}  value={sqlContent} onChange={(e) => {handleSqlContent(e)}}
                 placeholder="/* Enter your SQL query here */">
                     
                 </textarea>
 
-            
+                {/* Console */}
                 <textarea id='sqlConsole' value={consoleContent}>
                     
                 </textarea>
@@ -208,6 +221,8 @@ function MainBodyWrap({query}) {
     </div>
 
 
+
+    {/* Modals */}
 
     <Modal
         open={open}

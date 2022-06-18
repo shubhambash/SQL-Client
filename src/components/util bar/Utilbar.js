@@ -114,23 +114,22 @@ function Utilbar() {
 
             {!table ? (<>
                 
-            <Tippy placement='bottom' content={<div id='tableNotSelected'>
-                
+            <Tippy placement='bottom' content={
+            
+                <div id='tableNotSelected'>
                 <p>
-            please select a table from the tables menu on the left side of the app
-                </p></div>}>
+                please select a table from the tables menu on the left side of the app
+                </p></div>}
+            >
+
                 <span id='tableName'>
                 <i class="fas fa-question-circle"></i>
-                
 
-
-            
-                
-                
                 &nbsp;&nbsp;(--Table Not Selected--)
+       
+                </span>
                 
-                
-            </span></Tippy></>) : (<></>)}
+            </Tippy></>) : (<></>)}
 
 
             {queryOptions === 'saved' && table?.savedQueries?.map((O, index) => 
