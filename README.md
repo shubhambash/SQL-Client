@@ -38,8 +38,10 @@ It was done with the help of React Dev Tools extension's **Profiler tool**.  The
 This uses the Lighthouse Performance scoring to calculate the overall performance of a webpage. The app scored a decent 92 % . Below are the Insights
 ###
 ![PageSpeed Insights - Google Chrome 6_18_2022 7_13_18 PM (2)](https://user-images.githubusercontent.com/88769060/174442200-7a5b14bd-b7c5-4a2c-9104-f86ea3da1d3f.png)
-
+### GTmetrix Score
 ###
+###![Latest Performance Report for_ https___62adf951e48690173777adc2--curious-seahorse-4ca5a6 netlify app_ _ GTmetrix - Google Chrome 7_27_2022 7_38_53 PM](https://user-images.githubusercontent.com/88769060/181266310-f20c1725-037b-40d0-9346-f9c3d041d51e.png)
+
 
 ###
 ## Optimizations
