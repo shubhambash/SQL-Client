@@ -1,15 +1,14 @@
 import React from 'react'
-import { useState, useContext, useCallback} from 'react'
+import { useState, useContext, useCallback, memo} from 'react'
 import './Files.css'
 import Utilbar from '../util bar/Utilbar'
-
 import {TableContext} from '../../context/Context'
 
 
 function Files({content}) {
 
     // using the Context API
-    const {table, setTable} = useContext(TableContext)
+    const {setTable} = useContext(TableContext)
     const [subItems, setSubItems] = useState(null)
     
    
@@ -20,7 +19,7 @@ function Files({content}) {
             setSubItems(tableObject?.filename)
         }
     }
-    ,[table, subItems])
+    ,[content])
 
 
   return (
@@ -69,4 +68,4 @@ function Files({content}) {
   )
 }
 
-export default Files
+export default memo(Files)

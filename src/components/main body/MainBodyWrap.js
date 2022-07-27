@@ -3,37 +3,31 @@ import { TableContext } from '../../context/Context'
 import './MainBodyWrap.css'
 import TableComp from './table/TableComp'
 import Tippy from '@tippyjs/react';
-// import Box from '@mui/material/Box';
-//import Modal from '@mui/material/Modal';
- // dummy data to generate SQL run simulations
 
-const dummySqlResultGenerator = 
-{
-    "SELECT * FROM products WHERE productName = 'chai'" : [1,1,0],
-    "SELECT * FROM products WHERE unitsInOrder SORTED" : [2,5,0],
-    "SELECT productName, supplierid FROM products WHERE discontinued = 0" : [4,6,0],
-    "SELECT productId, productName, unitPrice FROM products WHERE unitPrice BETWEEN 1000 AND 3000" : [5,5,5],    
-    "SELECT * FROM customers WHERE country = 'India'" : [1,2,0],
-    "SELECT * FROM customers WHERE customerId SORTED" : [1,5,8],
-    "SELECT companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30" : [3,3,6],
-    "SELECT * FROM products WHERE spam = true INNER JOIN companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30" : [1,5,16],
-    "SELECT saleId FROM sales WHERE unitsInStock MINIMUM" : [1,3,550],
-    "SELECT * FROM sales WHERE sales insight" : [0,0,500],
-    "SELECT saleId,maxBuyers FROM products WHERE some_attributes" : [1,1,100],
-    "SELECT * FROM products WHERE unitsInStock MAXIMUM" : [1,4,600]
-
-}
+  // dummy data to generate SQL run simulations
+  const dummySqlResultGenerator = 
+  {
+      "SELECT * FROM products WHERE productName = 'chai'" : [1,1,0],
+      "SELECT * FROM products WHERE unitsInOrder SORTED" : [2,5,0],
+      "SELECT productName, supplierid FROM products WHERE discontinued = 0" : [4,6,0],
+      "SELECT productId, productName, unitPrice FROM products WHERE unitPrice BETWEEN 1000 AND 3000" : [5,5,5],    
+      "SELECT * FROM customers WHERE country = 'India'" : [1,2,0],
+      "SELECT * FROM customers WHERE customerId SORTED" : [1,5,8],
+      "SELECT companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30" : [3,3,6],
+      "SELECT * FROM products WHERE spam = true INNER JOIN companyName, supplierid FROM customers WHERE regularity BETWEEN 20 AND 30" : [1,5,16],
+      "SELECT saleId FROM sales WHERE unitsInStock MINIMUM" : [1,3,550],
+      "SELECT * FROM sales WHERE sales insight" : [0,0,500],
+      "SELECT saleId,maxBuyers FROM products WHERE some_attributes" : [1,1,100],
+      "SELECT * FROM products WHERE unitsInStock MAXIMUM" : [1,4,600]
+  }
+  
 
 function MainBodyWrap({query}) {
-
-   
-
-
 
     const {table} = useContext(TableContext)
     const [sqlContent, setSqlContent] = useState(query)
     const [filters, setFilters] = useState([])
-    const[consoleContent, setConsoleContent] = useState('>>')
+    const [consoleContent, setConsoleContent] = useState('>>')
     const [copied, setCopied] = useState(false)
     const [fontsize, setFontSize] = useState(12)
 
@@ -169,6 +163,9 @@ function MainBodyWrap({query}) {
     </div>
     </>
   )
+
+
+
 }
 
 export default memo(MainBodyWrap)

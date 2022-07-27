@@ -5,9 +5,7 @@ import Context from '../../context/Context'
 function Main() {
   return (
     <>
-
         <div id='mainWrapper'>
-
             <div id='mainContainer'>
               
             <Context>
@@ -15,10 +13,7 @@ function Main() {
             </Context>
 
             </div>
-
-        </div>
-        
-
+        </div>  
     </>
   )
 }

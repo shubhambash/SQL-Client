@@ -1,6 +1,5 @@
 import  React, {useEffect, useState, memo, useCallback} from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-
 // import Box from '@mui/material/Box';
 // import Modal from '@mui/material/Modal';
 
@@ -62,9 +61,7 @@ function TableComp({table, filters}) {
 
     },[table, filters, colsize])
 
-
-
-    const handleCopy = (selectedRows) => {
+    const handleCopy = useCallback((selectedRows) => {
       return (e) => {
         navigator.clipboard.writeText(JSON.stringify(selectedRows))
         setCopied(true)
@@ -74,7 +71,7 @@ function TableComp({table, filters}) {
         }, 3000)
        
       }
-    }
+    },[selectedRows])
 
     const handleRow = (e) => {
       if(e.target.value > 100)
@@ -172,9 +169,7 @@ function TableComp({table, filters}) {
     )
     :(<></>)}
 
-
   </div>
-
   </>
   );
 }

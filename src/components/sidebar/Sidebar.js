@@ -7,7 +7,6 @@ function Sidebar() {
 
     const [content, setContent] = useState([])
 
-  
     //assuming function call to database to fetch the required content/ tables of the selected DB
     const getData = async () =>
     {

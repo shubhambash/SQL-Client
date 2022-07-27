@@ -1,9 +1,9 @@
 import React, { useState, createContext } from 'react'
-
 export const TableContext = createContext()
-const Context = ({children}) => {
 
-    const [table, setTable] = useState()
+const Context = ({children}) => {
+  
+  const [table, setTable] = useState()
   return (
     <>
 

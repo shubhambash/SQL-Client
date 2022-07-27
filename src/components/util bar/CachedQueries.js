@@ -1,6 +1,7 @@
 import React, { useEffect, useState, memo} from 'react'
 import {SAVED, HISTORY, SHARED} from './options'
 
+
 function CachedQueries({queryOptions, table, handleQuery}) {
 
     const [queryColumn, setQueryColumn] = useState('savedQueries')
