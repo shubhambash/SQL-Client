@@ -11,7 +11,6 @@ function Files({content}) {
     const {setTable} = useContext(TableContext)
     const [subItems, setSubItems] = useState(null)
     
-   
     const selectTable = useCallback((tableObject) =>
     {
         return (e) => {
@@ -20,7 +19,6 @@ function Files({content}) {
         }
     }
     ,[content])
-
 
   return (
     <>
@@ -56,6 +54,7 @@ function Files({content}) {
 
                         :
                         (<></>)
+
                         }
                     </div>
                     </>
@@ -63,7 +62,7 @@ function Files({content}) {
                 </div>
             </div>
 
-            <Utilbar/>
+        <Utilbar/>
     </>
   )
 }
