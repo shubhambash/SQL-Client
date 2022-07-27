@@ -1,25 +1,10 @@
-import  React, {useEffect, useState} from 'react';
+import  React, {useEffect, useState, memo, useCallback} from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 
+// import Box from '@mui/material/Box';
+// import Modal from '@mui/material/Modal';
 
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 300,
-  bgcolor: 'background.paper',
-  border: '1px dotted #000',
-  boxShadow: 24,
-  p: 4,
-};
-
-
-
-export default function TableComp({table, filters}) {
+function TableComp({table, filters}) {
 
 
     const [columns, setColumns] = useState([])
@@ -36,8 +21,6 @@ export default function TableComp({table, filters}) {
 
     useEffect(() => {
 
-        console.log("tables", table)
-        console.log("filters", filters)
         const columnsData = []
         if(colsize <= 50)
         {
@@ -53,9 +36,7 @@ export default function TableComp({table, filters}) {
                 headerName : col,
                 width : colsize
             }
-
             columnsData.push(colData)
-           
         })
        
         // simulating fake query run by altering with table data
@@ -63,10 +44,7 @@ export default function TableComp({table, filters}) {
         {
           columnsData?.splice(filters[0],filters[1])
         }
-        
-
         setColumns(columnsData)
-
 
         const rowsData = []
         table?.rows.map((Obj) => {
@@ -80,8 +58,8 @@ export default function TableComp({table, filters}) {
         {
           rowsData.splice(0,filters[2])
         }
-
         setRows(rowsData)
+
     },[table, filters, colsize])
 
 
@@ -99,7 +77,6 @@ export default function TableComp({table, filters}) {
     }
 
     const handleRow = (e) => {
-
       if(e.target.value > 100)
       {
           return
@@ -108,11 +85,8 @@ export default function TableComp({table, filters}) {
       {
           setRowsPPage(e.target.value)
       }
-    
     }
     
-    
-
   return (
     <>
 
@@ -121,68 +95,47 @@ export default function TableComp({table, filters}) {
               <span style={{fontSize : '18px'}}>Table : </span><span id='tableName'>{table?.filename ?(<>{table?.filename}{' '}({rows?.length} entries)</>) : (<><span style={{fontSize : '18px'}}>(--Not Selected--)</span></>)}</span>
           </div>
 
-         
- 
-
           <div>
           {copied ? (<>
-
             <button className='customButton' key={1} style={{color : 'green'}}>
               copied!
             </button>
-
-          
           </>) :
-
           (<>
               <button className='customButton' onClick={handleCopy(selectedRows)}>
                     <i class="fas fa-copy" style={{opacity : '70%'}}></i>
                     &nbsp;&nbsp;
                         copy 
              </button>
-          
           </>)}
           </div>
      
-
           <div>
-
           <button className='customButton' onClick={handleShare}>
-                    <i class="fas fa-share-alt" style={{opacity : '70%'}}></i>
-                    &nbsp;&nbsp;share
+              <i class="fas fa-share-alt" style={{opacity : '70%'}}></i>&nbsp;&nbsp;
+              share     
           </button>
-          
           </div>
-        
-
-
+  
           <div>
-
           <button className='customButton' style={{width : '30px', padding : '5px'}}
           onClick={(e) => {setColsize(prev => prev - 5)}}>
-
           <i class="fas fa-minus" style={{opacity : '70%'}}></i>
-      
           </button>
-
-
 
           <span id='customWidth'>
           column width
           </span>
           
-
-
           <button className='customButton' style={{width : '30px',padding : '5px', marginRight : '5px'}}
-          onClick={(e) => {setColsize(prev => prev + 5)}}>
-                   
+          onClick={(e) => {setColsize(prev => prev + 5)}}>         
           <i class="fas fa-plus" style={{opacity : '70%'}}></i>
-
           </button>
 
-
-          <input id='numRows' min={5} max={100} type = "number" placeholder="rows" onChange={(e) => {handleRow(e)}}>
-          </input>
+          <label>
+            <input id='numRows' min={5} max={100} type = "number" placeholder="rows" onChange={(e) => {handleRow(e)}}>
+            </input>
+          </label>
 
           </div>
   
@@ -191,11 +144,10 @@ export default function TableComp({table, filters}) {
 
       <div style={{ height: 400, width: '100%' }}>
 
-        {/* loading DataGrid only when table data available to cut performance cost */}
+      {/* loading DataGrid only when table data available to cut performance cost */}
       {table ? (
       <>
       
-     
       <DataGrid
         rows={rows}
         columns={columns}
@@ -209,70 +161,22 @@ export default function TableComp({table, filters}) {
          const selectedRowData = rows?.filter((row) => {
           return selectedIDs.has(row.id.toString())
          })
-     
           if(selectedRowData.length !== 0)
           {
             setSelectedRows(selectedRowData)
           }
-          
         }}
       />
   
-
-
       </>
     )
-    :
-    
-    (
-      <></>
-    )}
-     </div>
+    :(<></>)}
 
 
+  </div>
 
-
-    {/* modal */}
-
-     <Modal
-        open={shareOpen}
-        onClose={handleCloseShare}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-
-            <div className='modalBody'>
-                <div>
-                <h3>Share Current Table Data With Team</h3>
-                </div>
-
-                    <div>
-                    <form>
-                    <div>
-                    <input className='saveName' placeholder='Enter Title'></input>
-                    </div>
-
-                    <div>
-                    <textarea className='saveTextArea' placeholder='Enter Table Description'></textarea>
-                    </div>
-
-                    
-
-                    <div>
-                    <button className='saveModal' type='submit'>Share 
-                   
-                   </button>
-                    </div>
-                    
-                </form>
-
-                    </div>
-                
-            </div>
-         
-        </Box>
-      </Modal>
   </>
   );
 }
+
+export default memo(TableComp)

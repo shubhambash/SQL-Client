@@ -1,9 +1,10 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext, useCallback} from 'react'
 import './Files.css'
 import Utilbar from '../util bar/Utilbar'
-import { useContext } from 'react'
-import {TableContext} from './Context'
+
+import {TableContext} from '../../context/Context'
+
 
 function Files({content}) {
 
@@ -12,43 +13,30 @@ function Files({content}) {
     const [subItems, setSubItems] = useState(null)
     
    
-    const selectTable = (tableObject) =>
+    const selectTable = useCallback((tableObject) =>
     {
         return (e) => {
             setTable(tableObject)
             setSubItems(tableObject?.filename)
-            console.log(table)
         }
     }
+    ,[table, subItems])
 
- 
 
   return (
     <>
-
-
             <div id='files'>
-
-                
-
                 <div id='filesContainer'>
-
                 <p id='dbName'>Database : Product Customer Relations </p>
 
                 {/* mapping the file names */}
-
-                {content?.map((O, index) => {
+                {content && content?.map((O, index) => {
                     return <>
                     
                     <div className='fileItemContainer' key = {index} onClick={selectTable(O)}>
                     <i class="fas fa-angle-right"></i>
 
-                        <span className='fileItem'>{O?.filename} <span style={{color : 'rgb(201, 122, 2)'}}>({O.columns.length} </span>cols, <span style={{color : 'rgb(201, 122, 2)'}}>{O.rows.length}</span> rows )</span>
-
-                        
- 
-
-
+                    <span className='fileItem'>{O?.filename} <span style={{color : 'rgb(201, 122, 2)'}}>({O.columns.length} </span>cols, <span style={{color : 'rgb(201, 122, 2)'}}>{O.rows.length}</span> rows )</span>
                         {subItems === O.filename ? 
                         
                         (<>
@@ -58,46 +46,25 @@ function Files({content}) {
 
                             return <>
                             <div className='fileSubItem'>
-
-                            <i class="fas fa-circle" style={{height : '10px', opacity : '40%', color : 'green'}}></i><span className='fileItem'>{col}</span>
-
+                                <i class="fas fa-circle" style={{height : '10px', opacity : '40%', color : 'green'}}></i><span className='fileItem'>{col}</span>
                             </div>
                            
                             </>
-
                             })}
-                        
                         </div>
-                        
+
                         </>)
 
                         :
-
                         (<></>)
-                    
-                    
                         }
-
-
-
-
-
                     </div>
-                    
                     </>
                 })}
-
-
-
                 </div>
-
-
             </div>
 
-          
             <Utilbar/>
-       
-
     </>
   )
 }

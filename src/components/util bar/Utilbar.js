@@ -1,38 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, memo, useCallback, useContext} from 'react'
 import './Utilbar.css'
 import MainBodyWrap from '../main body/MainBodyWrap'
-import { useContext } from 'react'
-import {TableContext} from '../files/Context'
+import {TableContext} from '../../context/Context'
 import Tippy from '@tippyjs/react'
+import {SAVED, HISTORY, SHARED} from './options'
+import CachedQueries from './CachedQueries'
+
+
 function Utilbar() {
     
     const {table} = useContext(TableContext)
     const [query, setQuery] = useState('')
-    const [queryOptions, setQueryOption] = useState('saved')
+    const [queryOptions, setQueryOption] = useState(SAVED)
 
-    const handleQuery = (Object) => {
+    useEffect(() => {
+
+    }, [queryOptions])
+
+    const handleQuery = useCallback((Object) => {
         return (e) => {
             setQuery(Object.query)
         }
-    }
- 
+    }, [query] )
 
   return (
     <>
 
-    
- 
     <MainBodyWrap query={query}/>
 
-
     <div id='utilBarWrapper'>
-
-        
-
             <div id='utilBarNav'>
-
-                <div className='utilBarNavItem' onClick={(e) => {setQueryOption('saved')}}>
-                {queryOptions === 'saved' ? 
+                <div className='utilBarNavItem' onClick={(e) => {setQueryOption(SAVED)}}>
+                {queryOptions === SAVED ? 
                     (
                         <>
                             <span className='utilNavItemClicked'>
@@ -52,9 +51,9 @@ function Utilbar() {
                     }
                 </div>
 
-                <div className='utilBarNavItem' onClick={(e) => {setQueryOption('history')}}>
+                <div className='utilBarNavItem' onClick={(e) => {setQueryOption(HISTORY)}}>
   
-                {queryOptions === 'history' ? 
+                {queryOptions === HISTORY ? 
                     (
                         <>
                             <span className='utilNavItemClicked'>
@@ -72,13 +71,11 @@ function Utilbar() {
                     )
                     
                     }
-
-        
                 </div>
 
-                <div className='utilBarNavItem' onClick={(e) => {setQueryOption('shared')}}>
+                <div className='utilBarNavItem' onClick={(e) => {setQueryOption(SHARED)}}>
                     
-                    {queryOptions === 'shared' ? 
+                    {queryOptions === SHARED ? 
                     (
                         <>
                             <span className='utilNavItemClicked'>
@@ -95,32 +92,20 @@ function Utilbar() {
                         </>
                     )
                     
-                    }
-
-
-                    
-
-
-
-
-
-                    
+                    }    
                 </div>
-
             </div>
 
+
         <div id='utilBarBody'>
-
-
             {!table ? (<>
                 
             <Tippy placement='bottom' content={
             
                 <div id='tableNotSelected'>
                 <p>
-                please select a table from the tables menu on the left side of the app
-                </p></div>}
-            >
+                Please select a table from the tables menu on the left side of the app
+                </p></div>}>
 
                 <span id='tableName'>
                 <i class="fas fa-question-circle"></i>
@@ -128,147 +113,12 @@ function Utilbar() {
                 &nbsp;&nbsp;(--Table Not Selected--)
        
                 </span>
-                
             </Tippy></>) : (<></>)}
 
+            {/* map over all corresponding queries */}
+            <CachedQueries queryOptions = {queryOptions} table={table} handleQuery={handleQuery}/>    
 
-            {queryOptions === 'saved' && table?.savedQueries?.map((O, index) => 
-            {
-                return <>
-
-                    <div className='cardItem' key={index} onClick={handleQuery(O)}>
-
-                        <div className='cardShare'>
-                            
-                        </div>
-
-
-                         <div className='cardHeading'>
-
-                            <span className='cardHeadingText'>{O.queryName}</span>
-
-                         </div>
-
-                         <div className='cardDesc'>
-                            <span className='cardDescText'>{O.queryDescription}</span>
-                         </div>
-
-                         <div className='addedBy'>
-
-                            <div className='addedByName'>
-                            <i class="far fa-user-circle"style={{color : 'black', opacity : '40%'}}></i>
-                            <span className='addedByText'>{O.author}</span>
-                            </div>
-
-                            <div className=''>
-                            <span className='addedByDate'>{O.daysAgo} days ago</span>
-                            </div>
-                            
-                         </div>
-                                    
-                    </div>
-                
-                
-                </>
-            })}
-
-
-
-
-            {queryOptions === 'history' && table?.historyQueries?.map((O, index) => 
-            {
-                return <>
-
-                    <div className='cardItem' key={index} onClick={handleQuery(O)}>
-
-                        <div className='cardShare'>
-                            
-                        </div>
-
-
-                         <div className='cardHeading'>
-
-                            <span className='cardHeadingText'>{O.queryName}</span>
-
-                         </div>
-
-                         <div className='cardDesc'>
-                            <span className='cardDescText'>{O.queryDescription}</span>
-                         </div>
-
-                         <div className='addedBy'>
-
-                            <div className='addedByName'>
-                            <i class="far fa-user-circle"style={{color : 'black', opacity : '40%'}}></i>
-                            <span className='addedByText'>{O.author}</span>
-                            </div>
-
-                            <div className=''>
-                            <span className='addedByDate'>{O.daysAgo} days ago</span>
-                            </div>
-                            
-                         </div>
-                                    
-                    </div>
-                
-                
-                </>
-            })}
-
-
-
-
-
-            {queryOptions === 'shared' && table?.sharedQueries?.map((O, index) => 
-            {
-                return <>
-
-                    <div className='cardItem' key={index} onClick={handleQuery(O)}>
-
-                        <div className='cardShare'>
-                            
-                        </div>
-
-
-                         <div className='cardHeading'>
-
-                            <span className='cardHeadingText'>{O.queryName}</span>
-
-                         </div>
-
-                         <div className='cardDesc'>
-                            <span className='cardDescText'>{O.queryDescription}</span>
-                         </div>
-
-                         <div className='addedBy'>
-
-                            <div className='addedByName'>
-                            <i class="far fa-user-circle"style={{color : 'black', opacity : '40%'}}></i>
-                            <span className='addedByText'>{O.author}</span>
-                            </div>
-
-                            <div className=''>
-                            <span className='addedByDate'>{O.daysAgo} days ago</span>
-                            </div>
-                            
-                         </div>
-                                    
-                    </div>
-                
-                
-                </>
-            })}
-
-
-
-
-
-            
         </div>
-
-
-
-
     </div>
 
     
@@ -276,4 +126,4 @@ function Utilbar() {
   )
 }
 
-export default Utilbar
+export default memo(Utilbar)

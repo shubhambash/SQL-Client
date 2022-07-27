@@ -1,7 +1,7 @@
 import React from 'react'
 import './Main.css'
 import Sidebar from '../sidebar/Sidebar'
-import Context from '../files/Context'
+import Context from '../../context/Context'
 function Main() {
   return (
     <>

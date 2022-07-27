@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import './Sidebar.css'
 import Files from '../files/Files'
 
@@ -9,7 +9,7 @@ function Sidebar() {
 
   
     //assuming function call to database to fetch the required content/ tables of the selected DB
-    async function  getData()
+    const getData = async () =>
     {
         try {
             const res = await fetch("data.json", 
@@ -32,9 +32,7 @@ function Sidebar() {
     }
 
     useState(() => {
-
         getData()
-
     }, [])
 
   return (
@@ -43,32 +41,26 @@ function Sidebar() {
         <div id='sideBar'>
 
             <div className='sideBarItem'>
-            <span className='sidebarIcon'><i class="fas fa-folder fa-2x " style={{color : 'rgb(201, 122, 2)'}}></i></span>
-                
+                <span className='sidebarIcon'><i class="fas fa-folder fa-2x " style={{color : 'rgb(201, 122, 2)'}}></i></span>
                 <div>
                 <span className='sideBarText'>Files</span> 
                 </div>
-                
             </div>
 
             <div className='sideBarItem'>
-            <span className='sidebarIcon'><i class="fas fa-database fa-2x " style={{color : 'rgb(201, 122, 2)'}}></i>   </span>
-            <div>
-            <span className='sideBarText'>Database</span>   
-            </div>
-
+                <span className='sidebarIcon'><i class="fas fa-database fa-2x " style={{color : 'rgb(201, 122, 2)'}}></i>   </span>
+                <div>
+                <span className='sideBarText'>Database</span>   
+                </div>
             </div>
 
 
             <div className='sideBarItem'>
-            <span className='sidebarIcon'><i class="fas fa-file-import fa-2x " style={{color : 'rgb(201, 122, 2)'}}></i></span>
-                
+                <span className='sidebarIcon'><i class="fas fa-file-import fa-2x " style={{color : 'rgb(201, 122, 2)'}}></i></span>
                 <div>
                 <span className='sideBarText'>Files</span> 
                 </div>
-                
             </div>
-
         </div>
 
         <Files content={content}/>
@@ -77,4 +69,4 @@ function Sidebar() {
   )
 }
 
-export default Sidebar
+export default memo(Sidebar)
