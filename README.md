@@ -3,7 +3,7 @@
 This frontend application has the ability to select or import a database and perform various SQL queries on its table. It has a editor area that takes in user SQL input and generates the corresponding table and displays it in an organised way. It has features to save , share, copy and build custom queries. Users also have an access to saved pre-defined queries, history of queries used and shared queries.  
 
 ###  Link to the deployed app 
-[Atlan Project Link](https://62add181b37d4a7c6399cda4--curious-seahorse-4ca5a6.netlify.app/)
+[Link to project](https://62adf951e48690173777adc2--curious-seahorse-4ca5a6.netlify.app/)
 ## Features
 
  - Selecting any table from the side bar displays all the queries related to this table that were saved, shared or accessed before
@@ -38,8 +38,10 @@ It was done with the help of React Dev Tools extension's **Profiler tool**.  The
 This uses the Lighthouse Performance scoring to calculate the overall performance of a webpage. The app scored a decent 92 % . Below are the Insights
 ###
 ![PageSpeed Insights - Google Chrome 6_18_2022 7_13_18 PM (2)](https://user-images.githubusercontent.com/88769060/174442200-7a5b14bd-b7c5-4a2c-9104-f86ea3da1d3f.png)
-
+### GTmetrix Score
 ###
+###![Latest Performance Report for_ https___62adf951e48690173777adc2--curious-seahorse-4ca5a6 netlify app_ _ GTmetrix - Google Chrome 7_27_2022 7_38_53 PM](https://user-images.githubusercontent.com/88769060/181266310-f20c1725-037b-40d0-9346-f9c3d041d51e.png)
+
 
 ###
 ## Optimizations
@@ -49,11 +51,12 @@ This uses the Lighthouse Performance scoring to calculate the overall performanc
 	Row virtualization is the insertion and removal of rows as the grid scrolls vertically.
 The grid renders twice as many rows as are visible. It isn't configurable yet. Row virtualization is limited to 100 rows in the  `DataGrid`  component. This greatly impacts the performance of this app as the app constantly renders and re-renders hundreads of rows and columns of data dynamically.
 
-2) **React Context API** : Context provides a way to pass data through the component tree without having to pass props down manually at every level. This solves the problem of prop drilling that greatly affects the app performance.
+2) **React Context API** : Context provides a way to pass data through the component tree without having to pass props down manually at every level. This solves the problem of prop drilling that greatly affects the app performance. Also, kept most states local to a component for speed, while only creating two global variables with Context API.
 
 	> In a typical React application, data is passed top-down (parent to child) via props, but such usage can be cumbersome for certain types of props (e.g. locale preference, UI theme) that are required by many components within an application. Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree.
 
 	In case of this react app, table and setTable were two states that were used by children components with the help of Context API
+3) **use of memo and useCallback to cache and memoize components and functions whereever possible**  
 3) **Avoiding costly CSS styles to imrpove First Contentful Paint**  
 4) **Storing states locally as much as possible** : Instead of using a state management library such as Redux, most states were stored and used locally to reduce overheads.
 5) **Use of React Fragments <> </>**  : In order to avoid the DOM from creating several useless Nodes,  <React.Fragment> has been used in many instances.
