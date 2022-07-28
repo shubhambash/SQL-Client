@@ -51,11 +51,12 @@ This uses the Lighthouse Performance scoring to calculate the overall performanc
 	Row virtualization is the insertion and removal of rows as the grid scrolls vertically.
 The grid renders twice as many rows as are visible. It isn't configurable yet. Row virtualization is limited to 100 rows in the  `DataGrid`  component. This greatly impacts the performance of this app as the app constantly renders and re-renders hundreads of rows and columns of data dynamically.
 
-2) **React Context API** : Context provides a way to pass data through the component tree without having to pass props down manually at every level. This solves the problem of prop drilling that greatly affects the app performance.
+2) **React Context API** : Context provides a way to pass data through the component tree without having to pass props down manually at every level. This solves the problem of prop drilling that greatly affects the app performance. Also, kept most states local to a component for speed, while only creating two global variables with Context API.
 
 	> In a typical React application, data is passed top-down (parent to child) via props, but such usage can be cumbersome for certain types of props (e.g. locale preference, UI theme) that are required by many components within an application. Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree.
 
 	In case of this react app, table and setTable were two states that were used by children components with the help of Context API
+3) **use of memo and useCallback to cache and memoize components and functions whereever possible**  
 3) **Avoiding costly CSS styles to imrpove First Contentful Paint**  
 4) **Storing states locally as much as possible** : Instead of using a state management library such as Redux, most states were stored and used locally to reduce overheads.
 5) **Use of React Fragments <> </>**  : In order to avoid the DOM from creating several useless Nodes,  <React.Fragment> has been used in many instances.
