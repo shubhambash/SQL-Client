@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo, useCallback, useContext} from 'react'
+import React, { useEffect, useState, memo, useCallback, useContext, useRef} from 'react'
 import './Utilbar.css'
 import MainBodyWrap from '../main body/MainBodyWrap'
 import {TableContext} from '../../context/Context'
@@ -12,6 +12,7 @@ function Utilbar() {
     const {table} = useContext(TableContext)
     const [query, setQuery] = useState('')
     const [queryOptions, setQueryOption] = useState(SAVED)
+
 
     useEffect(() => {
 
@@ -116,7 +117,7 @@ function Utilbar() {
             </Tippy></>) : (<></>)}
 
             {/* map over all corresponding queries */}
-            <CachedQueries queryOptions = {queryOptions} table={table} handleQuery={handleQuery}/>    
+            <CachedQueries queryOptions = {queryOptions} table={table} handleQuery={handleQuery} />    
 
         </div>
     </div>

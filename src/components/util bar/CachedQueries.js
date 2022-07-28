@@ -5,13 +5,17 @@ import {SAVED, HISTORY, SHARED} from './options'
 function CachedQueries({queryOptions, table, handleQuery}) {
 
     const [queryColumn, setQueryColumn] = useState('savedQueries')
+    
 
     useEffect(() => {
+        
         setQueryColumn('savedQueries')
         if(queryOptions === SAVED) setQueryColumn('savedQueries')
         else if(queryOptions === HISTORY) setQueryColumn('historyQueries')
         else if(queryOptions === SHARED) setQueryColumn('sharedQueries')
     })
+
+
 
   return (
     <>
